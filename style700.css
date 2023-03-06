@@ -1,0 +1,7 @@
+body{
+    --spacing: 10px;
+}
+
+#grid_page{
+    display: block;
+}

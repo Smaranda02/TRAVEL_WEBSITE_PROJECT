@@ -1,0 +1,9 @@
+body{
+    --spacing: 15px;
+}
+
+
+#grid_page{
+    display: block;
+}
+

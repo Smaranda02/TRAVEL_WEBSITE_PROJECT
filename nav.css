@@ -1,0 +1,16 @@
+#hamburger, #ch-menu {
+    display: none;
+}
+
+ul.meniu li{
+    width: var(--width-button);
+    height: var(--height-menu);
+    background-color: var(--cyan_blue);
+    overflow: hidden;
+    text-align: center;
+}
+
+body{
+    --height-menu:25px;
+    --width-button:150px;
+}

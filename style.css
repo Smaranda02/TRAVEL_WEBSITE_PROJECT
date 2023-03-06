@@ -1,0 +1,340 @@
+#top{
+
+    overflow: hidden;
+    animation: animate 2s linear forwards;
+
+
+}
+
+@keyframes animate {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+    30% {
+        width: 50px;
+        height: 0px;
+    }
+    60% {
+        width: 200px;
+        height: 80px;
+    }
+}
+
+
+#first_link{
+    border: 3px groove ;
+    border-color: var(--highlight_color);
+    border-radius: 8px;
+    color:black;
+    background:white;
+    transition: all 100ms linear;
+}
+
+
+#logo{
+    vertical-align: sub;
+}
+
+#first_link:hover{
+    color:black;
+    background:var(--grid_background);
+}
+
+
+#second_link{
+    border: 3px groove ;
+    border-color: var(--highlight_color);
+    color:black;
+    border-radius: 8px;
+    background:white;
+    transition: all 100ms linear;
+}
+
+
+#second_link:hover{
+    color:black;
+    background:var(--grid_background);
+}
+
+
+
+body{
+    --text_color:black;
+    --grid_background : #96C5D6;
+    --main_color : #D8E4EB;
+    --highlight_color : #285FF5;
+    --cyan_blue : #42CAD6;
+    --bluer-blue:#229DF5;
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    --padding_grid : 5px;
+    --spacing: 20px;
+    background-color: var(--main_color);
+    color:var(--text_color)
+}
+
+/*
+img{
+    width: 100%;
+}
+
+ */
+
+
+
+#container_iframe{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#video_iframe{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+
+#iframe{
+    border-style: groove;
+    border-color: var(--highlight_color);
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+}
+
+
+h2{
+    font-size: 2rem;
+}
+
+
+#iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 95%;
+    height: 91%;
+    padding: 2.5%;
+    background-color: var(--bluer-blue);
+
+}
+
+
+.iframe_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+
+
+#top_link {
+    border: 2px solid var(--highlight_color);
+    padding: 2px;
+    width: 20px;
+    height: 20px;
+    overflow: auto;
+    rotate : 45deg;
+    float: right;
+}
+
+#top_link:hover{
+    opacity: 50%;
+}
+
+
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip_text {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltip_text {
+    visibility: visible;
+}
+
+
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--highlight_color);
+    position: fixed;
+    right: 5px;
+    rotate:135deg;
+    line-height: 10;
+}
+
+.triangle:hover{
+    background-color: var(--bluer-blue);
+}
+
+table,th,tr,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+}
+
+#caption_table {
+    caption-side: bottom;
+}
+
+
+tbody>tr:nth-child(even) {
+    background-color: var(--cyan_blue);
+}
+
+tbody>tr:nth-child(odd) {
+    background-color: var(--bluer-blue);
+}
+
+
+tfoot{
+    background-color: var(--cyan_blue);
+}
+
+
+tbody>tr:hover {background-color: var(--highlight_color) ;}
+
+tfoot>tr:hover {background-color:var(--highlight_color) ;}
+
+#container_table {
+    overflow-x: visible;
+}
+
+
+#last_column{
+    background-color: var(--cyan_blue);
+}
+
+#avg_price{
+    background-color: var(--cyan_blue);
+}
+
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.75em;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    h1 {
+        font-size: 1.875em ;
+    }
+}
+
+@media screen and (max-width: 2000px) {
+    h1 {
+        font-size: 2em;
+    }
+}
+
+
+
+
+#grid_page{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "z-presentation z-presentation z-presentation z-presentation"
+    "z-users z-data_stats z-data_stats z-site_server"
+    "z-calendar z-calendar z-table z-table"
+    "z-ad z-ad z-table z-table"
+    "z-other z-other z-other z-other";
+    gap: 10px;
+    padding: 10px;
+    overflow: auto;
+    background-color: var(--grid_background);
+
+    gap: 20px 10px
+
+}
+
+#grid_page > div {
+    padding: 20px 0;
+    background-color: var(--main_color);
+    padding: var(--padding_grid);
+}
+
+
+main > * {
+    border : 2px solid black;
+
+}
+
+
+#presentation{
+    grid-area: z-presentation;
+}
+
+#users{
+    grid-area: z-users;
+}
+
+#data_stats{
+    grid-area: z-data_stats;
+}
+
+#calendar{
+    grid-area: z-calendar;
+}
+
+#site_server{
+    grid-area: z-site_server;
+}
+
+#ad{
+    grid-area: z-ad;
+}
+
+#other{
+    grid-area: z-other;
+}
+
+#table{
+    grid-area: z-table;
+}
+
+
+#palace{
+    max-width: 100%;
+    height: auto;
+}
+
+#ceausescu{
+    max-width: 100%;
+    height: auto;
+   /* white-space: pre; */
+}
+
+#museum{
+    max-width: 100%;
+    height: auto;
+    height: 50%;
+    width: 50%;
+}
