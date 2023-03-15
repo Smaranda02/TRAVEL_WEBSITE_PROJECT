@@ -1,12 +1,21 @@
-#top{
-
-    overflow: hidden;
-    animation: animate 2s linear forwards;
-
+#header{
+    background-color: #AEC9F5;
+    border-radius: 5px;
+    border: 2px solid white;
+    margin:0;
+    padding: 0;
 
 }
 
-@keyframes animate {
+
+#top{
+
+    overflow: hidden;
+    animation: animate_title 2s linear forwards;
+}
+
+
+@keyframes animate_title {
     0% {
         width: 0px;
         height: 0px;
@@ -22,65 +31,65 @@
 }
 
 
-#first_link{
+.iframe_links > a{
     border: 3px groove ;
     border-color: var(--highlight_color);
-    border-radius: 8px;
+    border-radius: 0 0 8px 8px;
     color:black;
+    padding: 10px;
+    text-align: center;
     background:white;
     transition: all 100ms linear;
 }
 
+
+.iframe_links a:hover {
+    color:black;
+    background:var(--grid_background);
+}
 
 #logo{
     vertical-align: sub;
 }
 
-#first_link:hover{
-    color:black;
-    background:var(--grid_background);
+
+@font-face {
+    font-family: stylish_font;
+    src: url(./resurse/Courgette-Regular.ttf);
 }
 
-
-#second_link{
-    border: 3px groove ;
-    border-color: var(--highlight_color);
-    color:black;
-    border-radius: 8px;
-    background:white;
-    transition: all 100ms linear;
-}
-
-
-#second_link:hover{
-    color:black;
-    background:var(--grid_background);
+#extern-font > q , #extern-font > blockquote{
+    font-family: stylish_font;
 }
 
 
 
 body{
+    --shadow: #97C5F5;
     --text_color:black;
     --grid_background : #96C5D6;
     --main_color : #D8E4EB;
     --highlight_color : #285FF5;
     --cyan_blue : #42CAD6;
     --bluer-blue:#229DF5;
+    --padding_grid : 15px;
+    --spacing: 30px;
+
+}
+
+body{
     padding-left: var(--spacing);
     padding-right: var(--spacing);
-    --padding_grid : 5px;
-    --spacing: 20px;
     background-color: var(--main_color);
-    color:var(--text_color)
+    color:var(--text_color);
+    min-width:450px;
+    margin:0;
 }
 
-/*
-img{
-    width: 100%;
+
+#popular_img {
+
 }
-
- */
-
 
 
 #container_iframe{
@@ -105,6 +114,10 @@ img{
     width: 100%;
 }
 
+
+h1{
+    text-align: center;
+}
 
 h2{
     font-size: 2rem;
@@ -134,20 +147,50 @@ h2{
 
 
 #top_link {
+    position: fixed;
     border: 2px solid var(--highlight_color);
     padding: 2px;
-    width: 20px;
-    height: 20px;
-    overflow: auto;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
     rotate : 45deg;
     float: right;
+    bottom: 20px;
+    left: 96%;
+    background-color: var(--main_color);
+    opacity: 0.5;
+    box-shadow: 10px 10px 10px var(--bluer-blue);
+    transition: opacity 300ms;
+    line-height: 50px;
 }
 
-#top_link:hover{
-    opacity: 50%;
+
+.triangle {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid var(--cyan_blue);
+    border-radius: 75%;
+    position: fixed;
+    right: 4px;
+    rotate:135deg;
+    line-height: 10;
+}
+
+.triangle:hover{
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid navy;
 }
 
 
+
+#top_link:hover, #top_link:active{
+    opacity: 1;
+    background-color: var(--bluer-blue);
+}
 
 
 .tooltip {
@@ -155,6 +198,8 @@ h2{
     display: inline-block;
 }
 
+
+/*
 .tooltip .tooltip_text {
     visibility: hidden;
     width: 120px;
@@ -173,27 +218,13 @@ h2{
 }
 
 
-
-.triangle {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid var(--highlight_color);
-    position: fixed;
-    right: 5px;
-    rotate:135deg;
-    line-height: 10;
-}
-
-.triangle:hover{
-    background-color: var(--bluer-blue);
-}
-
 table,th,tr,td{
     border: 1px solid black;
     border-collapse: collapse;
 }
+
+*/
+
 
 th, td {
     padding: 10px;
@@ -201,6 +232,12 @@ th, td {
 
 #caption_table {
     caption-side: bottom;
+}
+
+
+
+#hamburger_menu{
+    display: none;
 }
 
 
@@ -218,9 +255,15 @@ tfoot{
 }
 
 
-tbody>tr:hover {background-color: var(--highlight_color) ;}
+tbody>tr:hover {background-color: var(--highlight_color);
+    transition-duration: 300ms;
 
-tfoot>tr:hover {background-color:var(--highlight_color) ;}
+}
+
+tfoot>tr:hover {background-color:var(--highlight_color) ;
+    transition-duration: 300ms;
+
+}
 
 #container_table {
     overflow-x: visible;
@@ -236,26 +279,6 @@ tfoot>tr:hover {background-color:var(--highlight_color) ;}
 }
 
 
-@media screen and (max-width: 600px) {
-    h1 {
-        font-size: 1.75em;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    h1 {
-        font-size: 1.875em ;
-    }
-}
-
-@media screen and (max-width: 2000px) {
-    h1 {
-        font-size: 2em;
-    }
-}
-
-
-
 
 #grid_page{
     display:grid;
@@ -266,25 +289,44 @@ tfoot>tr:hover {background-color:var(--highlight_color) ;}
     "z-calendar z-calendar z-table z-table"
     "z-ad z-ad z-table z-table"
     "z-other z-other z-other z-other";
-    gap: 10px;
+
     padding: 10px;
     overflow: auto;
     background-color: var(--grid_background);
+    gap: 20px 10px;
+    box-shadow:  10px 10px 10px var(--shadow);
+    /*
+    grid-row-gap
+    grid-column-gap
+     */
 
-    gap: 20px 10px
+}
+
+
+#grid_page > * {
+    border-radius: 10px;
+    border: 3px solid black;
+    padding : var(--padding_grid);
 
 }
 
 #grid_page > div {
-    padding: 20px 0;
     background-color: var(--main_color);
-    padding: var(--padding_grid);
 }
 
 
 main > * {
     border : 2px solid black;
 
+}
+
+footer {
+    background-color: var(--grid_background);
+    box-shadow:  10px 10px 10px var(--shadow);
+}
+
+#map, #mail, #tel{
+    color: black;
 }
 
 
@@ -337,4 +379,24 @@ main > * {
     height: auto;
     height: 50%;
     width: 50%;
+}
+
+address > a {
+    text-decoration:none;
+}
+
+
+/*in relatie parinte fiu daca punem z-index la ambele mereu copilul va fi deasupra parintelui
+pentru a pune z-index trebuie sa nu avem position static*/
+
+/*position absolute pozitioneaza elementu in functie de pirmul stramos cu pozitie nestatica iar position relative fata de porpria lui caseta*/
+
+
+/*position sticky face una dintre atributele top left right sa se aplica ca distanta minima care mereu se va respecta pana cand elementul parinte dispare*/
+
+
+/*CURS*/
+
+main{
+    margin-top: 100px;
 }
