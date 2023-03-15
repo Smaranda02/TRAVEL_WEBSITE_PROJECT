@@ -18,7 +18,7 @@ footer {
     width: 80%;
     border-style: dotted;
     border-color: black;
-    position: absolute;  /*daca nu pun ce se intampla*/
+    position: absolute;  
     margin-top: 55px;
     top: 5px;
 }
