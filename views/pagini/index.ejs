@@ -2,92 +2,32 @@
 <html lang="en">
 <head>
     <title>WANDERWORLD</title>
-    <meta charset="UTF-8"><!-- codificarea în memorie a caracterelor-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="flight, booking, hotel, restaurant, price, holiday, vacation, ticket, city, country, tour, tour guide, museum,destination">
     <meta name="description" content="Wanderworld will help you plan your dream holiday offering a wide range of options for your flight, hotel or just a tourist guide for main landmarks around the world"><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
-    <meta name="author" content="Smaranda Andronic">
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/ico/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./resurse/ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./resurse/ico/favicon-16x16.png">
-    <link rel="manifest" href="./resurse/ico/site.webmanifest">
-    <link rel="shortcut icon" href="./resurse/ico/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="./resurse/ico/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-
-    <link rel="stylesheet" href="./nav.css" type="text/css">
-    <link rel="stylesheet" href="./nav1000.css" type="text/css"   media="screen and (max-width: 1000px)">
-    <link rel="stylesheet" href="./nav700.css" type="text/css"   media="screen and (max-width: 700px)">
-    <link rel="stylesheet" href="./style.css" type="text/css" >
-    <link rel="stylesheet" href="./print.css" type="text/css" media="print">
-    <link rel="stylesheet" href="./style.css" type="text/css" media="screen and (min-width: 1001px)">
-    <link rel="stylesheet" href="./style1000.css" type="text/css" media="screen and (max-width: 1000px)">
-    <link rel="stylesheet" href="./style700.css" type="text/css"  media="screen and (max-width: 700px)" >
-    <!-- <link rel="stylesheet" href="./reset.css" type="text/css" >-->
-
-
-
-    <script src="https://kit.fontawesome.com/6635304fb0.js" crossorigin="anonymous"></script>
+    <%- include("../fragmente/head.ejs") %>
 
 </head>
 
 <body>
-<header id="header">
-    <div id="h1">
-        <h1 id="top">Travel with WanderWorld<img id="logo" src="./resurse/ico/fav_bun.png" alt="imagine" title="Logo" width="100" height="100"> </h1>
-    </div>
-
-</header>
-
-<nav id="animate_menu">
-    <p id="watermark"></p>
-
-    <label id="hamburger" for="ch-menu">
-        <div id="bars" class="fa-solid fa-bars"></div>
-    </label>
-
-    <input id="ch-menu" type="checkbox">
-
-    <ul class="meniu">
-        <!--                <li id="hamburger_menu"><a href="javascript:void(0);" class="icon" onclick="myFunction()">-->
-        <!--                    <i class="fa-solid fa-bars"></i></a></li>-->
-        <li id="home_link"><div><i  class="fa-solid fa-house"></i><span id="home"> Home</span> <div id="home_icon"></div> </div> <!--nu folosim link pentru submeniu ci intr un div -->
-            <ul id="home_links">
-                <li><a href="#popular" style="text-decoration:none">Popular places</a></li>
-                <li><a href="#best" style="text-decoration:none">Best offers</a></li>
-                <li><a href="#us" style="text-decoration:none">More about us</a></li>
-                <li><a href="#feedback" style="text-decoration:none">Impressions</a></li>
-                <li><a href="#contact" style="text-decoration:none">Contact us</a></li>
-            </ul>
-        </li>
-
-        <li id="link_flight"><a href="#flight" style="text-decoration:none">Find your flight</a> </li>
-        <li id="link_accomodation"><a href="#accomodation" style="text-decoration:none">Accomodation</a></li>
-        <li id="link_guide"><a href="#guide" style="text-decoration:none">Travel guide</a></li>
-        <li id="link_logging"><a href="#logging" style="text-decoration:none">SignUp</a></li>
-    </ul>
-
-
-    <!--            <script>-->
-    <!--                function myFunction() {-->
-    <!--                    var x = document.getElementById("home_link");-->
-    <!--                    if (x.style.display === "block") {-->
-    <!--                        x.style.display = "none";-->
-    <!--                    } else {-->
-    <!--                        x.style.display = "block";-->
-    <!--                    }-->
-    <!--                }-->
-    <!--            </script>-->
-
-</nav>
+<%- include("../fragmente/header.ejs") %>
 
 <main>
     <div id="grid_page">
         <section id="presentation">
             <h2 id="popular"><b> Explore the most popular destinations</b></h2>
+
+
+            <p>
+                Ip: <%- locals.ip %>
+            </p>
+
+            <p>
+                Suma <%- locals.a+locals.b %>
+            </p>
+
+
             <figure>
                 <picture id="popular_img">
                     <source media="(max-width: 600px)" srcset="./resurse/imagini/dubai_small.jpg">
@@ -281,50 +221,7 @@
 
 </main>
 
-<footer>
-    <br>
-    <div id="contact">
-        <address>
-            <a id="mail" href="mailto:andronicsmaranda05@gmail.com">Email us  <i class="fa-solid fa-envelope"></i></a><br>
-            <a id="tel" href="tel:+40745611210">Call us  <i class="fa-solid fa-phone"></i> </a><br>
-            <a id="map" href="https://www.google.com/maps/dir//Facultatea+de+Matematic%C4%83+%C8%99i+Informatic%C4%83+Strada+Academiei+14+Bucure%C8%99ti+010014/@44.4355355,26.0995867,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x40b1ff472f47f047:0x493984726f0235f9!2m2!1d26.0995867!2d44.4355355">Find us here <i class="fa-sharp fa-solid fa-location-dot"></i></a><br>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.884300753012!2d26.097392650492484!3d44.43553547899959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1677860076640!5m2!1sro!2sro" width="600" height="450" style="border:0;"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-
-            </iframe>
-        </address>
-
-
-        <a aria-label="Chat on WhatsApp" href="https://wa.me/+40745611210">
-            <img alt="Chat on WhatsApp" src="./resurse/ChatOnWhatsAppButton/WhiteTheme/WhatsAppButtonWhiteSmall.png" width="150" height="40">
-        </a>
-
-        <details>
-            <summary>Our partners</summary>
-            <dl>
-                <dt>Sites </dt>
-                <dd>Booking.com</dd>
-                <dt>Hotel chains</dt>
-                <dd>Hilton Worldwide</dd>
-                <dt>Restaurants</dt>
-                <dd>Burger King</dd>
-                <dd>Five Guys</dd>
-            </dl>
-
-
-        </details>
-
-        <div id="top_link" class="tooltip" >
-            <a href="#top" title="Go to the top"> <div class="triangle"></div></a>
-            <!--<span class="tooltip_text">Go to top</span>-->
-        </div>
-
-        <small>WanderWorld &reg;</small>
-        <br>
-        <small>Copyright &copy; <time datetime="2023-03-01">1 March 2023</time></small>
-    </div>
-    <p id="banner"><b>Disclaimer! This is a school project</b></p>
-</footer>
+<%- include("../fragmente/footer.ejs") %>
 
 
 </body>

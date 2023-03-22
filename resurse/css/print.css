@@ -51,8 +51,10 @@ img{
 }
 
 
-.meniu{
+ul.meniu{
+    position:static;
     display: none;
+
 }
 
 a{
@@ -85,7 +87,7 @@ figcaption{
 
 h1{
     text-decoration-line: underline;
-    font-size: 2.5em;
+    font-size: 5em;
     page-break-after: always;
     margin-top: 50%;
     text-align: center;
