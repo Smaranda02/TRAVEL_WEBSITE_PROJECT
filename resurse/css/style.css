@@ -75,6 +75,8 @@ body{
     --padding_grid : 15px;
     --spacing: 30px;
 
+    --visited_link: #285FF5;
+
 }
 
 body{
@@ -123,6 +125,59 @@ h1{
 h2{
     font-size: 2rem;
 }
+
+
+main a:visited {
+    color : var(--visited_link);
+}
+
+main a:active{
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+}
+
+a[href^="http"]::before {
+    content: "⮳";
+    font-size: 2em;
+}
+
+
+a[href^="http"]:hover {
+    color:darkblue;
+}
+
+
+
+main a{
+    background-size: 0;
+       color: black;
+}
+
+main a:hover{
+        background-color: var(--highlight_color);
+        background-image: radial-gradient(circle,var(--highlight_color) 40%,  transparent 80%);
+        background: radial-gradient(circle, rgba(0, 0, 255, 1) 0%,rgba(0, 0, 255, 1) 40%, rgba(0, 0, 255, 0) 80%, rgba(0, 0, 255, 0) 100%);
+        background-position: center;
+        background-size: 100%;
+        transition: all 0.5s linear;
+}
+
+
+@keyframes captions_down {
+    from { top: 0;}
+    to{ bottom: 0;}
+}
+
+
+track{
+    background-color: transparent;
+    color: red;
+    text-shadow: 2px 1px black;
+    position: absolute;
+    animation: captions_down 2s;
+}
+
 
 
 #iframe {
@@ -202,31 +257,11 @@ figure{
 }
 
 
-/*
-.tooltip .tooltip_text {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-
-    position: absolute;
-    z-index: 1;
-}
-
-.tooltip:hover .tooltip_text {
-    visibility: visible;
-}
-
 
 table,th,tr,td{
     border: 1px solid black;
     border-collapse: collapse;
 }
-
-*/
 
 
 th, td {
